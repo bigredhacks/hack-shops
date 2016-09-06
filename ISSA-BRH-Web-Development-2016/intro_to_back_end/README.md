@@ -5,18 +5,22 @@
 In this workshop, you're going to learn how to create and host an API using Node.js, express, and Mongoose.  We'll be making the back-end for a popularity site that lets you find out how popular you are by your netid!
 
 ## Prerequisites
-You're going to need Node.js, MongoDB, git bash, and an OpenShift account.
+You're going to need to install [Node.js](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com), and [git bash](https://git-scm.com/).
+
+* Node.js is a javascript runtime that will act as our server.
+* MongoDB is a schemaless, key-value database.
+* Git is an industry standard distributed version control system.
 
 ## The Server
 All of the code for this is available within this repository under the popularity_api folder.
 
-Assuming you have set up Node.js and gotten mongo running, it is time to create the app.
+Assuming you have set up Node.js and gotten mongo running, it is time to create the app. Node.js comes with a package manager, `npm`, which provides some utilities to initialize and run a project, in addition to installing packages (libraries) that can be referenced within your app.
 
-In a terminal within the folder in which you want to create your app, type
+In a terminal window within the folder in which you want to create your app, type
 
     npm init
 
-and follow the instructions to create your package.json file.
+and follow the instructions to create your `package.json` file. This file is the project definition, mostly containing dependencies.
 
 We're going to need the express and mongoose modules in order to easily deliver content and store data.  Execute the following command:
 
