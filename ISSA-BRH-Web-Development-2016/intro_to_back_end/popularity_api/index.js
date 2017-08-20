@@ -3,17 +3,17 @@
 // Licensed under the MIT License
 
 // Modules
-var express = require('express');
-var mongoose = require('mongoose');
+const express = require('express');
+const mongoose = require('mongoose');
 
 // Initialize express
-var app = express();
+const app = express();
 
 // Connect mongoose
 mongoose.connect('mongodb://localhost/popularity_api');
 
 // Mongoose student Model
-var Student = mongoose.model('Student', 
+let Student = mongoose.model('Student',
         new mongoose.Schema({
             netid: {type: String, required: true, index: true},
             popularityCount: {type: Number, default: 0}
@@ -54,7 +54,7 @@ app.post('/popularity/:netid', function (req, res, next) {
 
         student.save(function(err) {
             if (err) {
-                console.error(err)
+                console.error(err);
                 return res.status(500).send('An internal error occurred');
             }
 
