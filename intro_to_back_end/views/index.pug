@@ -1,0 +1,34 @@
+html
+    head
+        link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css")
+        title My Super Cool Page
+    body
+        section(class="hero is-medium is-danger is-bold")
+            .hero-body
+                .container
+                    h1.title The Popularity API
+                    h2.subtitle Who's popular at Cornell?
+        .container
+            .columns
+                .column.is-one-third
+                .column.is-one-third
+                    h2.title.us-2 Find a student!
+                    .field
+                        .control
+                            label(for="netid") NetID
+                            input(class="input" type="text" name="netid" id="netid")
+                            button(class="button" name="Submit" value="Submit" id="popularity-submit") Search
+
+            .columns
+                .column.is-one-third
+                .column.is-one-third
+                    h2.title.us-2 Get a Chuck Norris fact!
+                    button(class="button" name="Submit" value="Submit") One does not simply get a Chuck Norris fact...
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script.
+            $("#popularity-submit").click(function () {
+                var netIDValue = $("#netid").val();
+                $.get("/popularity/" + netIDValue, function (data, status) {
+                    console.log(data, status);
+                });
+            });
